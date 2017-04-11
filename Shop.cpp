@@ -1,5 +1,9 @@
 #include "Shop.h"
 
+/*******************************************************
+CREATE NEW ROBOT PART
+*******************************************************/
+
 void Shop :: create_new_robot_part(vector<Robot_part>& rob)
 {
         string name;
@@ -238,7 +242,9 @@ void Shop :: list_Robot_Parts(int input)
 
 
 }
-
+/*******************************************************************
+CREATE NEW ROBOT MODEL
+*******************************************************************/
 
 
 void Shop :: create_new_robot_model()
@@ -415,19 +421,78 @@ void Shop :: list_Robot_Models()
 }
 
 
+/*******************************************************************************
+	CREATE BELOVED CUSTOMER
+*******************************************************************************/
+
+void Shop :: create_new_customer()
+{
+	string name;
+	int customer_number;
+	string phone_number;
+	string email_address;
+
+	cout << "What is the Customer's name:  ";
+	getline(cin,name);
+	cout << "What is the Customer Number:  ";
+	cin >> customer_number;
+	cin.ignore();
+	cout << "What is the Phone Number:  ";
+	getline(cin,phone_number);
+	cout << "What is the email_address:  ";
+	getline(cin,phone_number);
+
+	Customer customer(name,customer_number,phone_number,email_address);
+	customers.push_back(customer);
+}
+
+void Shop :: list_Customers()
+{
+	int j = 1;
+	for (int i = 0; i < customers.size(); i++)
+	{
+		cout << j << ")" << endl;
+		cout << "Customers Name:     " << customers[i].name() << endl;
+		cout << "Customers Number:   " << customers[i].customer_number() << endl;
+		cout << "Customers Phone:    " << customers[i].phone_number() << endl;
+		cout << "Customers Email:    " << customers[i].email_address() << endl << endl;
+
+		j++;
+	}
+}
+
+/*************************************************************
+CREATE SALES ASSOCIATE
+*************************************************************/
+
+void Shop :: create_new_sales_associate()
+{
+	string name;
+	int employee_number;
+
+	cout << "What is the Sales Associate's Name:   ";
+	getline(cin,name);
+	cout << "What is the Associate's Employee Number:   ";
+	cin >> employee_number;
+	cin.ignore();
+
+	Sales_associate sales_associate(name,employee_number);
+	sales_associates.push_back(sales_associate);
+}
 
 
+void Shop :: list_Sales_Associates()
+{
+	int j = 1;
+	for (int i = 0; i < sales_associates.size(); i++)
+	{
+		cout << j << ")" << endl;
+		cout << "Associates Name:              " << sales_associates[i].name() << endl;
+		cout << "Associates Employee Number:   " << sales_associates[i].employee_number() << endl << endl;
 
-
-
-
-
-
-
-
-
-
-
+		j++;
+	}
+}
 
 
 

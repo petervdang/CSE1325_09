@@ -1,5 +1,4 @@
-#include "Robot_model.cpp"
-#include "Customer.cpp"
+#include "Order.cpp"
 
 class Shop
 {
@@ -10,6 +9,8 @@ class Shop
 		vector<Battery> batterys;
 		vector<Torso> torsos;
                 vector<Robot_model> robot_models;
+		vector<Customer> customers;
+		vector<Sales_associate> sales_associates;
 
         public:
                 void create_new_robot_part(vector<Robot_part>& rob);
@@ -21,6 +22,8 @@ class Shop
                 void open(string filename);
                 void list_Robot_Parts(int input);
 		void list_Robot_Models();
+		void list_Customers();
+		void list_Sales_Associates();
 
 };
 
